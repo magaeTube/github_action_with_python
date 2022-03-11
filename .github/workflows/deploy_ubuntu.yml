@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run scripts in server
-        uses: magaeTube/github_action_with_python@main
+#        uses: magaeTube/github_action_with_python@main
         with:
           #key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SER2_IP }}
           username: ${{ secrets.SER2_ID }}
           password: ${{ secrets.SER2_PWD }}
-          script: |
-            echo "ㅌㅔ트스"
+        run:
+          echo "테스트"
