@@ -1,0 +1,22 @@
+name: deploy ubuntu
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  SSH:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run scripts in server
+        uses: magaeTube/github_action_with_python@main
+        with:
+          #key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SER2_IP }}
+          username: ${{ secrets.SER2_ID }}
+          password: ${{ secrets.SER2_PWD }}
+          script: |
+            echo "ㅌㅔ트스"
