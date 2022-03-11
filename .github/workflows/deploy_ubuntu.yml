@@ -10,13 +10,17 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
       - name: Run scripts in server
 #        uses: magaeTube/github_action_with_python@main
+        uses: appleboy/ssh-action@master
         with:
           #key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SER2_IP }}
           username: ${{ secrets.SER2_ID }}
           password: ${{ secrets.SER2_PWD }}
-        run:
-          echo "테스트"
+          script: |
+            whoami
+            echo "test"
