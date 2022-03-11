@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run scripts in server
-        #uses: magaeTube/github_action_with_python@main
+        uses: magaeTube/github_action_with_python@main
         with:
           #key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SER2_IP }}
