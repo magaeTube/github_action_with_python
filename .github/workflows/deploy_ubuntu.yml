@@ -7,7 +7,7 @@ on:
 jobs:
   SSH:
     name: SSH test
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     steps:
       - name: Run scripts in server
         uses: appleboy/ssh-action@v0.1.4
