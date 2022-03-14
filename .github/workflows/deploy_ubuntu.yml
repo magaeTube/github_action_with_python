@@ -7,22 +7,22 @@ on:
 
 jobs:
   SSH:
+    name: SSH Test
     runs-on: ubuntu-20.04
-
     steps:
 #      - name: Checkout source code
 #        uses: actions/checkout@v2
-
-      - name: Run scripts in server
+      - name: Run test scripts in server
 #        uses: magaeTube/github_action_with_python@main
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.SSH_KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-#          host: ${{ secrets.SER2_IP }}
-#          username: ${{ secrets.SER2_ID }}
-#          password: ${{ secrets.SER2_PWD }}
+#          key: ${{ secrets.SSH_KEY }}
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USER }}
+          host: ${{ secrets.SER2_IP }}
+          username: ${{ secrets.SER2_ID }}
+          password: ${{ secrets.SER2_PWD }}
+          port: 22
           script: |
             whoami
             echo "test"
