@@ -20,3 +20,4 @@ jobs:
           script: |
             whoami
             echo "test"
+            ls -rlt
