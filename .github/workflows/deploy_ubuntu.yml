@@ -12,9 +12,12 @@ jobs:
       - name: Run scripts in server
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: ${{ secrets.SER2_IP }}
-          username: ${{ secrets.SER2_ID }}
-          password: ${{ secrets.SER2_PWD }}
+#          host: ${{ secrets.SER2_IP }}
+#          username: ${{ secrets.SER2_ID }}
+#          password: ${{ secrets.SER2_PWD }}
+          host: 3.34.197.220
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           timeout: 40s
           script: |
