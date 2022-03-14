@@ -22,4 +22,4 @@ jobs:
             echo "test"
             ls -rlt
             cd github_action_with_python
-            git pull --origin main
+            git pull
