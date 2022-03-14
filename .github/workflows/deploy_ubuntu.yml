@@ -1,5 +1,4 @@
 name: deploy ubuntu
-
 on:
   push:
     branches:
@@ -9,25 +8,15 @@ jobs:
   SSH:
     name: SSH test
     runs-on: ubuntu-20.04
-
     steps:
-#      - name: Checkout source code
-#        uses: actions/checkout@v2
-#      - name: Install SSH Key
-#        uses: shimataro/ssh-key-action@v2
-#        with:
-#          key: ${{ secrets.SSH_KEY }}
-
       - name: Run scripts in server
-#        uses: magaeTube/github_action_with_python@main
         uses: appleboy/ssh-action@v0.1.4
         with:
-#          key: ${{ secrets.SSH_KEY }}
-#          host: ${{ secrets.HOST }}
-#          username: ${{ secrets.USER }}
           host: ${{ secrets.SER2_IP }}
           username: ${{ secrets.SER2_ID }}
           password: ${{ secrets.SER2_PWD }}
+          port: 22
+          timeout: 40s
           script: |
             whoami
             echo "test"
