@@ -21,3 +21,5 @@ jobs:
             whoami
             echo "test"
             ls -rlt
+            cd github_action_with_python
+            git pull --origin main
