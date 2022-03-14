@@ -7,26 +7,27 @@ on:
 
 jobs:
   SSH:
+    name: SSH test
     runs-on: ubuntu-20.04
 
     steps:
 #      - name: Checkout source code
 #        uses: actions/checkout@v2
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }} 
+#      - name: Install SSH Key
+#        uses: shimataro/ssh-key-action@v2
+#        with:
+#          key: ${{ secrets.SSH_KEY }}
 
       - name: Run scripts in server
 #        uses: magaeTube/github_action_with_python@main
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.SSH_KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-#          host: ${{ secrets.SER2_IP }}
-#          username: ${{ secrets.SER2_ID }}
-#          password: ${{ secrets.SER2_PWD }}
+#          key: ${{ secrets.SSH_KEY }}
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USER }}
+          host: ${{ secrets.SER2_IP }}
+          username: ${{ secrets.SER2_ID }}
+          password: ${{ secrets.SER2_PWD }}
           script: |
             whoami
             echo "test"
